@@ -2,36 +2,10 @@ import urllib2
 import json
 from datetime import datetime, date, time
 
-def convertmonth(m):
-    if m=="Jan":
-        return 01
-    elif m=="Feb":
-        return 02
-    elif m=="Mar":
-        return 03
-    elif m=="Apr":
-        return 04
-    elif m=="May":
-        return 05
-    elif m=="Jun":
-        return 06
-    elif m=="Jul":
-        return 07
-    elif m=="Aug":
-        return 8
-    elif m=="Sep":
-        return 9
-    elif m=="Oct":
-        return 10
-    elif m=="Nov":
-        return 11
-    elif m=="Dec":
-        return 12
-
-
 def converttime(s):
+    d={"Jan":1, "Feb":2, "Mar":3, "Apr":4, "May":5, "Jun":6, "Jul":7, "Aug":8,"Sep":9, "Oct":10, "Nov":11, "Dec":12}
     year=int(s[12:16])
-    month=convertmonth(s[8:11])
+    month=d[s[8:11]]
     date=int(s[5:7])
 
     hour=int(s[17:19])
